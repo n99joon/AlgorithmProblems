@@ -27,7 +27,7 @@ void heapify(int i){
 		m = i*2;
 	}
 	//compare 
-	int idx = comp(a[i],a[m]);
+	int idx = comp(i,m);
 	if(idx==-1) return;
 	else heapify(idx);
 }
@@ -42,12 +42,10 @@ void makeHeap(){
 
 void heapSort(){
 	makeHeap();
-	for(int i=1;i<a.size();i++){
-		cout << a[i] << " ";
-	}
+	
 	cout << endl;
-	while(a.size()>=1){
-		cout << a[1];
+	while(a.size()>1){
+		cout << a[1] << " ";
 		a[1]=a[a.size()-1];
 		a.pop_back();
 		heapify(1);
