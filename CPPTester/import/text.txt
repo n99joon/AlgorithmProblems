@@ -1,0 +1,5 @@
+c++ 공부
+https://kfgd.tistory.com/23
+
+fast io
+https://cgiosy.github.io/posts/fast-io
