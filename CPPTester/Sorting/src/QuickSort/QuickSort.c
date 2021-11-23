@@ -59,7 +59,7 @@ void quick_sort(int list[], int left, int right){
 void main(){
   int i;
   int n = MAX_SIZE;
-  int list[n] = {5, 3, 8, 4, 9, 1, 6, 2, 7};
+  int list[9] = {5, 3, 8, 4, 9, 1, 6, 2, 7};
 
   // 퀵 정렬 수행(left: 배열의 시작 = 0, right: 배열의 끝 = 8)
   quick_sort(list, 0, n-1);
