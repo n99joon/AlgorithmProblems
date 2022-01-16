@@ -68,12 +68,6 @@ int main(){
 		cout<<fd(b,c)<<endl;
 		
 	}	
-	//sparse table test
-	forr(i,n){
-		ffor(j,20){
-			cout<<spt[i][j]<<" ";
-		}
-		cout <<endl;
-	}
+	
 }
 	
