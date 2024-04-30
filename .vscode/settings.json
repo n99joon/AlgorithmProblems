@@ -1,6 +1,7 @@
 {
     "editor.codeActionsOnSave": {},
     "code-runner.executorMap": {
+    
 
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -55,5 +56,13 @@
         "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "sml": "cd $dir && sml $fileName",
         "mojo": "mojo run"
+    },
+    "files.associations": {
+        "utility": "cpp",
+        "deque": "cpp",
+        "format": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "iostream": "cpp"
     }
 }
