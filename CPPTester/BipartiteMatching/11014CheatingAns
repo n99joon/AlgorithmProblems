@@ -1,0 +1,37 @@
+def dfs(a):
+    visited[a]=True
+    for b in adj[a]:
+        if B[b]==-1: B[b]=a; return 1
+    for b in adj[a]:
+        if not(visited[B[b]]) and dfs(B[b]): B[b]=a; return 1
+    return 0
+
+import sys
+input=sys.stdin.readline
+MAX=2000
+for _ in range(int(input())):
+    N,M=map(int,input().split())
+    desk=[list(input().rstrip())for _ in range(N)]
+    node=0
+    for j in range(1,M,2):
+        for i in range(N):
+            if desk[i][j]=='.': desk[i][j]=node; node+=1
+    odd=node
+    adj=[]
+    for j in range(0,M,2):
+        for i in range(N):
+            if desk[i][j]=='.':
+                tmp=[]
+                for dx,dy in((-1,-1),(0,-1),(1,-1),(-1,1),(0,1),(1,1)):
+                    nx,ny=i+dx,j+dy
+                    if 0<=nx<N and 0<=ny<M and desk[nx][ny]!='x': tmp.append(desk[nx][ny])
+                adj.append(tmp)
+
+    even=len(adj)
+    match=0
+    B=[-1]*odd
+    for i in range(even):
+        visited=[0]*even
+        match+=dfs(i)
+        if match==odd:break
+    print(odd+even-match)

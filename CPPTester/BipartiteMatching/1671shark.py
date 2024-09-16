@@ -13,7 +13,11 @@ for i in range(n):
         if i==j: 
             continue
         if size[i] <= size[j] and speed[i] <= speed[j] and intel[i] <= intel[j]:
-            edge_ll[j].append(i)
+            if size[i] == size[j] and speed[i] == speed[j] and intel[i] == intel[j]:
+                if i>j:
+                    edge_ll[j].append(i)
+            else:
+                edge_ll[j].append(i)
 
 roundNo = 1
 vstd = [0]*n
@@ -25,6 +29,8 @@ def dfs(a):
     vstd[a] = roundNo
     for b in edge_ll[a]:
         if match[b] == a:
+            continue
+        if match[a]==b:
             continue
         if match[b] == -1 or dfs(match[b]):
             match[b] = a
@@ -38,5 +44,5 @@ for i in range(n):
     ans += dfs(i)
     roundNo += 1
 
-print(max(n-ans,1))
+print(n-ans)
 
